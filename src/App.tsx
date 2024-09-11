@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { menuItems } from "./data/db"
+import { useOrder } from "./hooks/useOrder";
 import { MenuItem } from "./components/MenuItem";
+
 
 function App() {
 
 
+  const { addItem } = useOrder();
 
 
   return (
@@ -18,7 +21,7 @@ function App() {
         <div className="container mx-auto  mt-5">
           <div className="row ">
             <div className="col-12 col-lg-5 ">
-              <h2 className="pb-2 fs-4">Menú</h2>
+              <h2 className="pb-2 fs-4 fw-bold">Menú</h2>
 
               <div>
                 {
@@ -27,13 +30,16 @@ function App() {
                     <MenuItem
                       key={item.id}
                       item={item}
+                      addItem={addItem}
                     />
 
                   ))
                 }
               </div>
             </div>
+
             <div className="col-12 col-lg-7 ">Consumo</div>
+
           </div>
 
 
