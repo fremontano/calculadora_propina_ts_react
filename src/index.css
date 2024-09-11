@@ -1,0 +1,9 @@
+/* styles button menuItem */
+.button-hover {
+  background-color: #ece7e7;
+  transition: background-color 0.3s ease;
+}
+
+.button-hover:hover {
+  background-color: #3e773896;
+}
