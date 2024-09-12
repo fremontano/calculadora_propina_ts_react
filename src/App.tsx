@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { menuItems } from "./data/db";
 import { useOrder } from "./hooks/useOrder";
 import { MenuItem } from "./components/MenuItem";
 import { OrderContest } from "./components/OrderContest";
+import { OrdenTotalPagar } from "./components/OrdenTotalPagar";
+import { TipPorcentajePropina } from "./components/TipPorcentajePropina";
 
 function App() {
   const { addItem, order, removeItem } = useOrder();
@@ -28,6 +29,10 @@ function App() {
 
             <div className="col-12 col-lg-7 border pt-2 pe-5">
               <OrderContest order={order} removeItem={removeItem} />
+              <TipPorcentajePropina />
+              <OrdenTotalPagar
+                order={order}
+              />
             </div>
           </div>
         </div>
